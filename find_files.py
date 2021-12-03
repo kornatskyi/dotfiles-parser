@@ -18,7 +18,8 @@ def find(name, path):
 
 def copyanything(src, dst):
     if os.path.isdir(src):
-        shutil.copytree(src, dst)
+        shutil.copytree(
+            src, dst, ignore=shutil.ignore_patterns('.git', '.git*'))
     else:
         shutil.copy2(src, dst)
 
